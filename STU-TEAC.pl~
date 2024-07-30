@@ -1,0 +1,16 @@
+% Facts: who studies which course
+studies(charlie, csc135).
+studies(olivia, csc135).
+studies(jack, csc131).
+studies(arthur, csc134).
+
+% Facts: who teaches which course
+teaches(kirke, csc135).
+teaches(collins, csc131).
+teaches(collins, csc171).
+teaches(juniper, csc134).
+
+% Rule: A professor teaches a student if the professor teaches a course and the student studies the same course
+professor(Professor, Student) :-
+    teaches(Professor, Course),
+    studies(Student, Course).
